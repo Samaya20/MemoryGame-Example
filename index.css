@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Poetsen+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+p,
+span,
+a,
+button {
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  position: relative;
+  background: black;
+}
+
+.preloader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 99;
+  transition: all 0.5s;
+}
+.preloader h1 {
+  font-size: 16px;
+  color: white;
+  font-family: "Crimson Pro", serif;
+  font-style: italic;
+  margin-top: 30px;
+}
+@keyframes svg-text-anim {
+  /* Most browsers */
+  40% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+  }
+  60% {
+    stroke-dashoffset: 0;
+    fill: #1c4f92;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: #1c4f92;
+  }
+}
+@media (max-width: 640px) {
+  .preloader {
+    padding: 0 30px;
+  }
+  .preloader svg {
+    width: 100%;
+  }
+}
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background: black;
+  color: white;
+  padding: 40px 0;
+}
+main .container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .container h1 {
+  font-size: 50px;
+  margin-bottom: 50px;
+}
+main .container .top {
+  width: 100%;
+  display: flex;
+}
+main .container .top p {
+  width: 100%;
+  font-size: 25px;
+  display: flex;
+  justify-content: start;
+}
+main .container .top p span {
+  margin-left: 10px;
+}
+main .container .cards-wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 40px 0;
+}
+main .container .cards-wrapper .card-item {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  perspective: 1000px;
+  overflow: hidden;
+  margin: auto;
+}
+main .container .cards-wrapper .card-item .card-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+main .container .cards-wrapper .card-item .card-inner .front-face,
+main .container .cards-wrapper .card-item .card-inner .back-face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: whitesmoke;
+}
+main .container .cards-wrapper .card-item .card-inner .front-face {
+  transform: rotateY(180deg);
+}
+main .container .cards-wrapper .card-item .card-inner .front-face img {
+  width: 100%;
+}
+main .container .cards-wrapper .card-item .card-inner .back-face {
+  background: white;
+  color: black;
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+}
+main .container .cards-wrapper .card-item.flipped .card-inner {
+  transform: rotateY(-180deg);
+}
+main .container .bottom {
+  margin: 40px auto;
+}
+main .container .bottom button {
+  padding: 10px 20px;
+  font-size: 30px;
+  background: none;
+  border: 1px solid white;
+  color: white;
+  transition: all 0.3s;
+  transform: scale(1);
+  cursor: pointer;
+}
+main .container .bottom button:hover {
+  transform: scale(0.9);
+  background: white;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  main .container h1 {
+    font-size: 20px;
+  }
+  main .container .top {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  main .container .top p {
+    font-size: 15px;
+    justify-content: center;
+  }
+}/*# sourceMappingURL=index.css.map */
