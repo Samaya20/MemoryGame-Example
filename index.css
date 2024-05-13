@@ -111,6 +111,7 @@ main .container .cards-wrapper .card-item {
   perspective: 1000px;
   overflow: hidden;
   margin: auto;
+  cursor: pointer;
 }
 main .container .cards-wrapper .card-item .card-inner {
   position: absolute;
